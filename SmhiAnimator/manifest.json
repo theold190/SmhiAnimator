@@ -1,0 +1,23 @@
+{
+  "name": "SmhiAnimator",
+  "version": "0.1",
+  "description": "An extension to show weather map from http://www.smhi.se.",
+  "options_page": "options.html",
+  "icons": { "16": "img/icon16x16.png",
+             "48": "img/icon48x48.png",
+            "128": "img/icon128x128.png"},
+
+  "browser_action": {
+    "default_title": "SmhiAnimator",
+    "default_icon": "img/favicon.ico",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.smhi.se/*"],
+      "js" : ["js/options.js"],
+      "css" : ["css/options.css"]
+    }
+    ]
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="js/options.js"></script>
+    <link rel="stylesheet" href="css/options.css">
+    <title>SmhiAnimator Options</title>
+  </head>
+  <body>
+  <body onload="restoreOptions();">
+  <div id="content">
+  <table class="form">
+    <tr><td colspan="3"><h1>SmhiAnimator Options</h1></td></tr>
+
+    <tr><td align="right"><h3>Select region:</h3></td>
+    <td>
+    <select onchange="toggleSaveButtonStatus(false)" id="IDWeatherRegion">
+      <option value="0">Sweden</option>
+      <option value="1">Nordic</option>
+    </select>
+    </td></tr>
+
+    <tr><td/><td align="right">
+      <button id="IDSaveButton" onclick="saveOptions()">Save</button>
+    </td></tr>
+
+    <tr><td/><td/><td align="right">
+      <a href="http://www.smhi.se/">More info...</a>
+    </td></tr>
+
+  </table>
+  </div>  
+  </body>
+</html>

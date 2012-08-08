@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>SMHI Animator</title>
+
+<script type="text/javascript">
+var region = localStorage["region"];
+if (!region) {
+    region = 0;//default_region;
+}
+addDataSource(region);
+
+var image;
+var index;
+
+function addDataSource(region)
+{
+    var sources = Array();
+    sources[0] = "http://www.smhi.se/weatherCacheSMHI2/radar/radarblixtbild_sv.js";
+    sources[1] = "http://www.smhi.se/weatherCacheSMHI2/radar/radarbild_sv.js";
+
+    if(!region || region < 0 || region >= sources.length) {
+        region = 0;//default_region;
+    }
+
+    var js_script = document.createElement('script');
+    js_script.type = "text/javascript";
+    js_script.src = sources[region];
+    document.getElementsByTagName('head')[0].appendChild(js_script);
+}
+
+function doAnimate() {
+  var timeout = 200;
+  index--;
+  if (index < 0) {
+    index = antPic;
+    timeout = 1000;
+  } else {
+    image.src = URL_RADARBILD + eval("brName"+index);
+  }
+  setTimeout(doAnimate, timeout);
+}
+
+function init() {
+  image = document.getElementById('IDImage');
+  index = antPic;
+  doAnimate();
+}
+
+</script>
+</head>
+
+<body onload="init()">
+<img src="" id="IDImage"/>
+</body>
+</html>
