@@ -1,18 +1,38 @@
 <html>
 <head>
 <title>SMHI Animator</title>
-<link rel="shortcut icon" href="img/favicon.ico" />
-<script type="text/javascript" src="http://www.smhi.se/weatherCacheSMHI2/radar/radarblixtbild_sv.js"></script>
+
 <script type="text/javascript">
+var region = window.localStorage["region"];
+if (!region) {
+    region = 0;//default_region;
+}
+addDataSource(region);
+
 var image;
-var index_start = antPic;
-var index = index_start;
+var index;
+
+function addDataSource(region)
+{
+    var sources = Array();
+    sources[0] = "http://www.smhi.se/weatherCacheSMHI2/radar/radarblixtbild_sv.js";
+    sources[1] = "http://www.smhi.se/weatherCacheSMHI2/radar/radarbild_sv.js";
+
+    if(!region || region < 0 || region >= sources.length) {
+        region = 0;//default_region;
+    }
+
+    var js_script = document.createElement('script');
+    js_script.type = "text/javascript";
+    js_script.src = sources[region];
+    document.getElementsByTagName('head')[0].appendChild(js_script);
+}
 
 function doAnimate() {
   var timeout = 200;
   index--;
   if (index < 0) {
-    index = index_start;
+    index = antPic;
     timeout = 1000;
   } else {
     image.src = URL_RADARBILD + eval("brName"+index);
@@ -22,19 +42,14 @@ function doAnimate() {
 
 function init() {
   image = document.getElementById('IDImage');
-  if (screen.width < screen.height) {
-    image.style.width="100%";
-  } else {
-    image.style.height="100%";
-  }
-  image.src = URL_RADARBILD + eval("brName"+(index-1));
+  index = antPic;
   doAnimate();
 }
-window.onload = init;
+
 </script>
 </head>
 
-<body>
+<body onload="init()">
 <img src="" id="IDImage"/>
 </body>
 </html>
