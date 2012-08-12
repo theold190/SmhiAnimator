@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" id="http://www.forknights.com/smhi">
+	<name>SMHI Animator</name>
+	<description>This is a home made Opera extension that allows in one click to check the weather situation in Sweden/Nordic region. The weather information is provided by Swedish Meteorological and Hydrological Institute (SMHI, http://www.smhi.se).</description>
+  	<author href="https://github.com/theold190" email="the.old@gmail.com">Oleg Krasnukhin</author>
+  	<icon src="img/favicon.ico"/>
+    <access origin="http://www.smhi.se" subdomains="true" />
+</widget>
