@@ -1,18 +1,17 @@
 Brief
-    This is a home made Google Chrome extension that allows in one
-    click to check the weather situation in Sweden/Nordic region. The 
-    weather information is provided by Swedish Meteorological and Hydrological
+    This is a home made extension/addon to Google Chrome, Firefox and Opera.
+    It allows in one click to check the weather situation in Sweden/Nordic region.
+    The weather information is provided by Swedish Meteorological and Hydrological
     Institute (SMHI, http://www.smhi.se).
 
     Check demo sub folder for the extension's screenshots.
 
 Installation
-    Drag and drop a .CRX file to your Google Chrome to install it. Please note 
-    that you can change your region in a Options page.
+    Drag and drop a .CRX (Chrome), .XPI (Firefox) or .OEX (Opera) file to your
+    browser to install it. Please note that you can change your region in a
+    Options page (not working for Firefox).
 
 Copyright
     This extension is free and could be freely modified for personal needs.
     
-    To make this extension GoogleTranslate Extension was used as an example.
-
     Extension is using scripts and resources from http://www.smhi.se. 
