@@ -1,5 +1,5 @@
 // Set Sweden as a default region
-var default_region = 1;
+var default_region = 0;
 
 function toggleSaveButtonStatus(disable) {
   document.getElementById("IDSaveButton").disabled = disable;
